@@ -1,0 +1,61 @@
+[
+  {
+    "service_id": "package01",
+    "service_name": "Classic Photo & Video",
+    "price": "1299",
+    "image": "https://www.eivans.com/wp-content/uploads/2020/04/bride-and-groom-exchange-rings-during-ceremony-2000-color.jpg",
+    "duration": "2 Hours",
+    "rating": "5",
+    "description": "Classic Photo & Video wedding photography is a style of wedding photography that utilizes traditional photography techniques and equipment to capture images of a wedding. This can include the use of film cameras and analog recording equipment, as well as techniques such as lighting, composition, and the use of different lenses to create a desired visual effect. Classic Photo & Video wedding photographers often have a strong understanding of traditional photography techniques and may use a variety of film stocks to achieve different looks and tones in their images."
+  },
+
+  {
+    "service_id": "package02",
+    "service_name": "Expressions Photo & Video",
+    "price": "1,999",
+    "image": "https://www.eivans.com/wp-content/uploads/2019/03/Wedding_Photographer_Houston_top_002a.jpg",
+    "duration": "6 Hours",
+    "rating": "5",
+    "description": "Expressions Photo & Video wedding photographers typically use a mix of traditional and contemporary photography techniques and equipment to capture images. This can include the use of film and digital cameras, as well as a variety of lenses and lighting setups to create the desired visual effect. Expressions Photo & Video wedding photographers may also use creative post-processing techniques to enhance the emotional impact of their images."
+  },
+
+  {
+    "service_id": "package03",
+    "service_name": "Exclusive Photo & Video",
+    "price": "2,899",
+    "image": "https://www.eivans.com/wp-content/uploads/2019/03/Wedding_Photographer_San-Francisco_top_001a.jpg",
+    "duration": "6 Hours",
+    "rating": "5",
+    "description": "Exclusive Photo & Video wedding photography is a style of wedding photography that emphasizes exclusivity and luxury. Exclusive Photo & Video wedding photographers typically offer a high-end service that includes a range of specialized and personalized options, such as custom albums, fine art prints, and personalized framing. They may also offer additional services such as engagement shoots, bridal portraits, and trash the dress sessions."
+  },
+
+  {
+    "service_id": "package04",
+    "service_name": "Storytelling Photo & Video",
+    "price": "4,999",
+    "image": "https://www.eivans.com/wp-content/uploads/2020/04/newlyweds-laughing-before-wedding-reception.jpg",
+    "duration": "8 Hours",
+    "rating": "5",
+    "description": "Storytelling Photo & Video wedding photography is a style of wedding photography that focuses on capturing the events and emotions of the wedding day in a narrative or documentary-style format. Storytelling Photo & Video wedding photographers aim to tell the story of the couple's relationship and the unique atmosphere and mood of the wedding day through a series of images. This can include capturing candid, spontaneous moments as well as posed photographs."
+  },
+
+  {
+    "service_id": "package05",
+    "service_name": "Photo-Only Digital Express",
+    "price": "1149.99",
+    "image": "https://www.eivans.com/wp-content/uploads/2020/04/wedding-couple-walking-state-park-2000-color-scaled-e1588253800589.jpg",
+    "duration": "5 Hours",
+    "rating": "5",
+    "description": "Photo-only wedding photography is a style of wedding photography that focuses solely on capturing still images of the wedding day. Photo-only wedding photographers use a variety of techniques and equipment, such as different lenses and lighting setups, to create the desired visual effect. They may also use creative post-processing techniques to enhance the visual impact of their images."
+  },
+
+  {
+    "service_id": "package06",
+    "service_name": "Video-Only Cinematic Video",
+    "price": "2,499.99",
+    "image": "https://www.eivans.com/wp-content/uploads/2018/10/Rodriguez_0393.jpg",
+    "duration": "6 Hours",
+    "rating": "5",
+    "description": "Video-only wedding videography is a style of wedding videography that focuses solely on capturing video footage of the wedding day. Video-only wedding videographers use a variety of techniques and equipment, such as different lenses and lighting setups, to create the desired visual effect. They may also use creative post-processing techniques to enhance the visual and auditory impact of their videos."
+  }
+]
