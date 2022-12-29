@@ -17,8 +17,8 @@ const Banner = () => {
               A Wonderful <span className="text-yellow-400">Story</span>
             </h1>
             <p className="mb-5 max-w-2xl lg:text-2xl font-thin">
-              "Happy girls are the prettiest". <br /> "Here's to love, laughter, and
-              happily ever after". <br /> This is squad's goals are LOVE!
+              "Happy girls are the prettiest". <br /> "Here's to love, laughter,
+              and happily ever after". <br /> This is squad's goals are LOVE!
             </p>
             <button className="btn btn-outline glass btn-sm lg:btn-lg mt-10">
               Discover More <BsArrowRight className="ml-1" />{" "}

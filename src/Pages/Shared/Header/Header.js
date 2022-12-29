@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { BsCameraFill } from "react-icons/bs";
+
 
 const Header = () => {
 
     const menuItems = <>
         <li className='font-semibold text-lg'><Link to='/'>Home</Link> </li>
+        <li className='font-semibold text-lg'><Link to='/services'>Services</Link> </li>
     </>
 
     return (
@@ -34,7 +37,10 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="text-md lg:text-2xl font-bold uppercase">
+          <div className='hidden lg:block text-6xl  text-yellow-400 mr-1 font-bold'>
+            <BsCameraFill />
+          </div>
+          <Link to="/" className="text-md lg:text-2xl font-semibold lg:font-bold uppercase">
             The <span className='text-yellow-400'>Wedding</span> Snap
           </Link>
         </div>
