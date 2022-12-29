@@ -28,7 +28,7 @@ const About = () => {
               Adding the memories <br /> of every moment
             </h2>
             <div className="flex items-center mt-5">
-              <span className="text-xl p-2 bg-gray-300 rounded-full md:text-2xl lg:text-3xl mr-7">
+              <span className="text-xl text-amber-500 p-2 bg-gray-300 rounded-full md:text-2xl lg:text-3xl mr-7">
                 <BsFillPatchCheckFill />
               </span>
               <h3 className="text-xl md:text-2xl lg:text-3xl font-serif">
@@ -40,7 +40,7 @@ const About = () => {
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
             <div className="flex items-center mt-5">
-              <span className="text-xl p-2 bg-gray-300 rounded-full md:text-2xl lg:text-3xl mr-7">
+              <span className="text-xl  text-amber-500 p-2 bg-gray-300 rounded-full md:text-2xl lg:text-3xl mr-7">
                 <BsCamera2 />
               </span>
               <h3 className="text-xl md:text-2xl lg:text-3xl font-serif">
@@ -52,7 +52,7 @@ const About = () => {
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
             <div className="flex items-center mt-5">
-              <span className="text-xl p-2 bg-gray-300 rounded-full md:text-2xl lg:text-3xl mr-7">
+              <span className="text-xl  text-amber-500 p-2 bg-gray-300 rounded-full md:text-2xl lg:text-3xl mr-7">
                 <BsLifePreserver />
               </span>
               <h3 className="text-xl md:text-2xl lg:text-3xl font-serif">

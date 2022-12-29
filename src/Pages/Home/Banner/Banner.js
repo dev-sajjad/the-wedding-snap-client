@@ -6,7 +6,7 @@ import { BsArrowRight } from "react-icons/bs";
 const Banner = () => {
     return (
       <div
-        className="hero min-h-screen my-10 rounded-2xl "
+        className="hero min-h-screen mt-10 mb-28 rounded-2xl "
         style={{ backgroundImage: `url("${bannerImg}")` }}
       >
         <div className="hero-overlay rounded-2xl bg-opacity-60"></div>
