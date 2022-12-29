@@ -24,7 +24,7 @@ const Service = () => {
         }
         </div>
         <div className='text-center '>
-          <button className='btn btn-active btn-sm md:btn-md lg:btn-lg capitalize mt-6'>Show All</button>
+          <button className='btn btn-active btn-md lg:btn-lg capitalize mt-6'>Show All</button>
         </div>
       </div>
     );

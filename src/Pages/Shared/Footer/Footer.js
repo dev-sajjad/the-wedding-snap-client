@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
       <div>
-        <footer className="footer p-10 bg-base-200 text-base-content rounded-t-xl">
+        <footer className="footer mt-6 p-10 bg-base-200 text-base-content rounded-t-xl">
           <div className='text-center'>
             <h2 className='text-2xl font-bold uppercase'>
               The <span className='text-yellow-400'> Wedding</span> Snap
