@@ -10,15 +10,15 @@ const Question = () => {
       <div className="hero-overlay bg-opacity-80"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-2xl mx-auto">
-          <h1 className="mb-5 tracking-normal leading-3 text-3xl font-serif font-medium">
-           Get Exclusive Offer And Promotions
+          <h1 className="mb-5 tracking-normal leading-3 text-xl md:text-2xl lg:text-3xl font-serif font-medium">
+            Get Exclusive Offer And Promotions
           </h1>
-          <h2 className="mb-5 text-4xl uppercase text-yellow-400 font-sans font-medium  max-w-xl mx-auto">
+          <h2 className="mb-5 text-2xl md:text-3xl lg:text-4xl uppercase text-yellow-400 font-sans font-medium  max-w-xl mx-auto">
             stay informed!
           </h2>
           <div>
-            <form className="form-control">
-              <label className="input-group">
+            <form>
+              <label className="input-group flex-col lg:flex-row">
                 <input
                   type="text"
                   placeholder="Your name"

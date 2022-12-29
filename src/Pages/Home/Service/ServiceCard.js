@@ -2,19 +2,24 @@ import React from 'react';
 import { BsStarFill } from "react-icons/bs";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { Link } from 'react-router-dom';
 
 
 
 const ServiceCard = ({ service }) => {
     
-    const { service_name, price, image, duration, rating, description } = service;
+    const { service_id, service_name, price, image, duration, rating, description } = service;
 
     return (
       <div className="card  bg-base-100 shadow-xl">
         <figure>
           <PhotoProvider>
             <PhotoView src={image}>
-              <img className=" h-64 w-full cursor-pointer" src={image} alt="Album" />
+              <img
+                className=" h-64 w-full cursor-pointer"
+                src={image}
+                alt="Album"
+              />
             </PhotoView>
           </PhotoProvider>
         </figure>
@@ -46,7 +51,9 @@ const ServiceCard = ({ service }) => {
               </span>
             </h3>
             <div>
-              <button className="btn btn-primary">View Details</button>
+              <Link to={`/services/${service_id}`}>
+                <button className="btn btn-primary">View Details</button>
+              </Link>
             </div>
           </div>
         </div>

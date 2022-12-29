@@ -1,6 +1,7 @@
 import React from 'react';
 import bannerImg from '../../../assets/Banner/banner.jpg'
 import { BsArrowRight } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -20,9 +21,11 @@ const Banner = () => {
               "Happy girls are the prettiest". <br /> "Here's to love, laughter,
               and happily ever after". <br /> This is squad's goals are LOVE!
             </p>
-            <button className="btn btn-outline glass btn-sm lg:btn-lg mt-10">
-              Discover More <BsArrowRight className="ml-1" />{" "}
-            </button>
+            <Link to='/services'>
+              <button className="btn btn-outline glass btn-sm lg:btn-lg mt-10">
+                Discover More <BsArrowRight className="ml-1" />{" "}
+              </button>
+            </Link>
           </div>
         </div>
       </div>
