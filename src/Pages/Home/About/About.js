@@ -47,7 +47,7 @@ const About = () => {
                 Experienced Photographer
               </h3>
             </div>
-            <p className="text-md lg:text-lg  lg:ml-20 font-thin">
+            <p className="text-md lg:text-lg ml-16 lg:ml-20 font-thin">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
@@ -59,7 +59,7 @@ const About = () => {
                 Support 24/7
               </h3>
             </div>
-            <p className="text-md lg:text-lg lg:ml-20 font-thin">
+            <p className="text-md lg:text-lg ml-16 lg:ml-20 font-thin">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
