@@ -36,7 +36,7 @@ const ServiceDetails = () => {
         BannerImg={bannerData.img}
         BannerName={bannerData.name}
           ></TopBanner>
-          {/* service description */}
+          {/* service details */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-14">
         <div className="relative">
           <PhotoProvider>
@@ -57,11 +57,11 @@ const ServiceDetails = () => {
           <h1 className="md:text-5xl">{service_name}</h1>
           <div className="flex items-center my-3">
             <div>
-              <h4 className="text-2xl mr-80 font-semibold bg-slate-200 rounded-2xl p-2">
+              <h4 className="text-2xl mr-80 font-semibold bg-slate-200 rounded-3xl p-2">
                 ${price}
               </h4>
             </div>
-            <div className="flex bg-slate-200 rounded-2xl p-2 items-center">
+            <div className="flex bg-slate-200 rounded-3xl p-2 items-center">
               <div className="text-2xl font-semibold">
                 <h4>{rating}</h4>
               </div>

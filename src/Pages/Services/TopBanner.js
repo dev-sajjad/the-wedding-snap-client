@@ -14,11 +14,7 @@ const TopBanner = ({BannerImg, BannerName}) => {
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold">
               {BannerName}
             </h1>
-            <iframe
-              className="h-1 max-w-md md:h-2 lg:h-3 flex justify-center"
-              title="line"
-              src="https://embed.lottiefiles.com/animation/55715"
-            ></iframe>
+            
           </div>
         </div>
       </div>
