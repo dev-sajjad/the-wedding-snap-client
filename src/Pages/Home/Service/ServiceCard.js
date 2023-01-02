@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
     
-    const { service_id, service_name, price, image, duration, rating, description } = service;
+    const { _id, service_name, price, image, duration, rating, description } = service;
 
     return (
       <div className="card  bg-base-100 shadow-xl">
@@ -51,7 +51,7 @@ const ServiceCard = ({ service }) => {
               </span>
             </h3>
             <div>
-              <Link to={`/services/${service_id}`}>
+              <Link to={`/services/${_id}`}>
                 <button className="btn btn-primary">View Details</button>
               </Link>
             </div>
