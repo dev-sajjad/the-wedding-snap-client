@@ -4,17 +4,28 @@ import { BsStarFill } from "react-icons/bs";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import TopBanner from "./TopBanner";
 import ShortBannerImg from "../../../src/assets/ShortBanner/wedding.jpg";
-
+import Reviews from "./Reviews/Reviews";
+import AddReview from "./Reviews/AddReview";
 
 const ServiceDetails = () => {
-  const [serviceDetails, setServiceDetails] = useState({});
-  const { _id, service_name, price, image, duration, rating, description } =
-    serviceDetails;
-
   // get current params from the url
   const serviceParam = useParams();
   const { id } = serviceParam;
+  const [serviceDetails, setServiceDetails] = useState({});
+  // reviews state and load specific reviews
+  const [reviews, setReviews] = useState([]);
 
+  const {
+    service_id,
+    service_name,
+    price,
+    image,
+    duration,
+    rating,
+    description,
+  } = serviceDetails;
+
+  // load specific service details data
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)
       .then((res) => res.json())
@@ -23,21 +34,31 @@ const ServiceDetails = () => {
       });
   }, [id]);
 
-    const bannerData = {
-      name: "Service Details",
-      img: ShortBannerImg,
-    };
-    
-    
+  // load specific service related data
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews/${serviceDetails?.service_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        return setReviews(data.data);
+      });
+  }, [serviceDetails?.service_id]);
+
+  
+  // top banner data
+  const bannerData = {
+    name: "Service Details",
+    img: ShortBannerImg,
+  };
+
   return (
-      <div>
-          {/* top banner */}
+    <div>
+      {/* top banner */}
       <TopBanner
         BannerImg={bannerData.img}
         BannerName={bannerData.name}
-          ></TopBanner>
-          {/* service details */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-14">
+      ></TopBanner>
+      {/* service details */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-20">
         <div className="relative">
           <PhotoProvider>
             <PhotoView src={image}>
@@ -54,7 +75,7 @@ const ServiceDetails = () => {
           </h3>
         </div>
         <div>
-          <h1 className="md:text-5xl">{service_name}</h1>
+          <h1 className="text-3xl mb-4 md:text-5xl">{service_name}</h1>
           <div className="flex items-center my-3">
             <div>
               <h4 className="text-2xl mr-80 font-semibold bg-slate-200 rounded-3xl p-2">
@@ -79,6 +100,20 @@ const ServiceDetails = () => {
           <button className="btn btn-warring w-full mt-5">
             <Link>Book Now</Link>
           </button>
+        </div>
+      </div>
+      {/* reviews section */}
+      <div className="mt-36 mb-24">
+        <h3 className="text-3xl text-center mb-6">Total reviews: {reviews.length}</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {reviews.map((review) => (
+              <Reviews key={review._id} review={review}></Reviews>
+            ))}
+          </div>
+          <div>
+            <AddReview service_id={service_id}></AddReview>
+          </div>
         </div>
       </div>
     </div>

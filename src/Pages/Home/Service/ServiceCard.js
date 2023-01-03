@@ -11,7 +11,7 @@ const ServiceCard = ({ service }) => {
     const { _id, service_name, price, image, duration, rating, description } = service;
 
     return (
-      <div className="card  bg-base-100 shadow-xl">
+      <div className="card  bg-white shadow-xl transform transition duration-500 hover:scale-105">
         <figure>
           <PhotoProvider>
             <PhotoView src={image}>
