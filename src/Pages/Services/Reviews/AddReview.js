@@ -1,10 +1,12 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
 const AddReview = ({service_id}) => {
 
     const handleAddReview = (e) => {
         e.preventDefault()
-       
+        const form = e.target;
+
         const customerReview = {
             service_id: service_id,
             customer_name: e.target.name.value,
@@ -13,7 +15,24 @@ const AddReview = ({service_id}) => {
             rating: e.target.rating.value ? e.target.rating.value : 5
         }
 
-        console.log(customerReview)
+        fetch("http://localhost:5000/reviews", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(customerReview)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    toast.success(data.message)
+                    form.reset();
+                } else {
+                    toast.error(data.error)
+                }
+            })
+        .catch(err => console.error(err))
+       
     }
 
 
