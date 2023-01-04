@@ -123,7 +123,7 @@ const ServiceDetails = () => {
             ) : (
               <div className="flex flex-col justify-center items-center">
                 <h1 className="text-rose-500 font-mono text-xl text-center  italic lg:text-2xl font-semibold mb-4">
-                  Opps! You are not login.
+                  Opps! You are not logged In.
                   <br />
                   <Link to='/login'>
                     <span className="btn btn-warning text-center">

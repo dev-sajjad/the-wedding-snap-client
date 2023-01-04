@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../contexts/AuthProvider';
 
-const AddReview = ({service_id}) => {
+const AddReview = ({ service_id }) => {
+    const { user } = useContext(AuthContext);
 
     const handleAddReview = (e) => {
         e.preventDefault()
@@ -10,6 +12,7 @@ const AddReview = ({service_id}) => {
         const customerReview = {
             service_id: service_id,
             customer_name: e.target.name.value,
+            email: user?.email,
             image: e.target.photo.value,
             text: e.target.textarea.value,
             rating: e.target.rating.value ? e.target.rating.value : 5
