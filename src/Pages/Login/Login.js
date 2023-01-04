@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
   const { userLogin, googleLogin } = useContext(AuthContext);
@@ -44,7 +44,6 @@ const Login = () => {
       .catch((error) => console.error(error));
   };
 
-  
   return (
     <div className="w-11/12 md:w-8/12 lg:w-2/5 border border-warning mx-auto bg-slate-100 my-8 rounded-2xl shadow-2xl py-10">
       <h1 className="text-4xl font-semibold text-center pt-4">
@@ -97,7 +96,6 @@ const Login = () => {
       </p>
       <div className="divider w-full">OR</div>
       <div className="text-center">
-        
         <button
           onClick={handleGoogleLogin}
           className="btn btn-outline capitalize font-mono text-xl w-2/3"

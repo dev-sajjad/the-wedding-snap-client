@@ -6,7 +6,7 @@ import TopBanner from "./TopBanner";
 import ShortBannerImg from "../../../src/assets/ShortBanner/wedding.jpg";
 import Reviews from "./Reviews/Reviews";
 import AddReview from "./Reviews/AddReview";
-import { AuthContext } from "../contexts/AuthProvider";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const ServiceDetails = () => {
   // get current params from the url
@@ -47,7 +47,6 @@ const ServiceDetails = () => {
       });
   }, [serviceDetails?.service_id]);
 
-  
   // top banner data
   const bannerData = {
     name: "Service Details",
@@ -119,13 +118,16 @@ const ServiceDetails = () => {
           </div>
           <div>
             {user?.email ? (
-              <AddReview service_id={service_id}></AddReview>
+              <AddReview
+                service_id={service_id}
+                service_name={service_name}
+              ></AddReview>
             ) : (
               <div className="flex flex-col justify-center items-center">
                 <h1 className="text-rose-500 font-mono text-xl text-center  italic lg:text-2xl font-semibold mb-4">
                   Opps! You are not logged In.
                   <br />
-                  <Link to='/login'>
+                  <Link to="/login">
                     <span className="btn btn-warning text-center">
                       Login Now
                     </span>
