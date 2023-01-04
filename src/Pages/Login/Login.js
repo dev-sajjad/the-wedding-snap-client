@@ -21,7 +21,7 @@ const Login = () => {
         } 
         console.log(user)
       })
-        .then(error => console.log(error))
+        .catch(error => toast.error(error))
 }
 
 

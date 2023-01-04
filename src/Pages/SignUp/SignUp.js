@@ -1,4 +1,3 @@
-import { success } from 'daisyui/src/colors';
 import React, { useContext }  from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
@@ -20,10 +19,10 @@ const SignUp = () => {
         const user = result.user;
         if (user) {
           toast.success('User SignUp successfully!')
-          form.reset();
+          form.reset()
         }
         console.log(user)
-    }).then(error => toast.error(error))
+    }).catch(error => toast.error(error))
 
   }
 

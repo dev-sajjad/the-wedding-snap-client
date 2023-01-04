@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BsStarFill } from "react-icons/bs";
 import { PhotoProvider, PhotoView } from "react-photo-view";
@@ -6,6 +6,7 @@ import TopBanner from "./TopBanner";
 import ShortBannerImg from "../../../src/assets/ShortBanner/wedding.jpg";
 import Reviews from "./Reviews/Reviews";
 import AddReview from "./Reviews/AddReview";
+import { AuthContext } from "../contexts/AuthProvider";
 
 const ServiceDetails = () => {
   // get current params from the url
@@ -14,6 +15,9 @@ const ServiceDetails = () => {
   const [serviceDetails, setServiceDetails] = useState({});
   // reviews state and load specific reviews
   const [reviews, setReviews] = useState([]);
+
+  //get user from authcontext
+  const { user } = useContext(AuthContext);
 
   const {
     service_id,
@@ -104,7 +108,9 @@ const ServiceDetails = () => {
       </div>
       {/* reviews section */}
       <div className="mt-36 mb-24">
-        <h3 className="text-3xl text-center mb-6">Total reviews: {reviews.length}</h3>
+        <h3 className="text-3xl text-center mb-6">
+          Total reviews: {reviews.length}
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {reviews.map((review) => (
@@ -112,7 +118,24 @@ const ServiceDetails = () => {
             ))}
           </div>
           <div>
-            <AddReview service_id={service_id}></AddReview>
+            {user?.email ? (
+              <AddReview service_id={service_id}></AddReview>
+            ) : (
+              <div className="flex flex-col justify-center items-center">
+                <h1 className="text-rose-500 font-mono text-xl text-center  italic lg:text-2xl font-semibold mb-4">
+                  Opps! You are not login.
+                  <br />
+                  <Link to='/login'>
+                    <span className="btn btn-warning text-center">
+                      Login Now
+                    </span>
+                  </Link>
+                </h1>
+                <h2 className="text-black text-2xl p-2 rounded-2xl lg:text-3xl font-thin bg-slate-200">
+                  Please login to add a review.
+                </h2>
+              </div>
+            )}
           </div>
         </div>
       </div>
