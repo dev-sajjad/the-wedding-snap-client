@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import ShortBannerImg from "../../../src/assets/ShortBanner/wedding.jpg";
 import TopBanner from "../Services/TopBanner";
 
 const AddService = () => {
+  const [loading, setLoading] = useState(false);
+
+
   const handleAddService = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,6 +21,9 @@ const AddService = () => {
       description: form.description.value,
     };
 
+    // loading while send data 
+    setLoading(true)
+
     fetch("https://the-wedding-snap-server.vercel.app/services", {
       method: "POST",
       headers: {
@@ -28,6 +34,7 @@ const AddService = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
+          setLoading(false)
           toast.success(data.message);
           form.reset();
         }
@@ -46,6 +53,9 @@ const AddService = () => {
         BannerImg={bannerData.img}
         BannerName={bannerData.name}
       ></TopBanner>
+      {
+        loading ? <div className="text-3xl text-amber-500 font-mono my-8 bg-red-200 rounded-2xl p-2">Wait! Sending....</div> : null
+      }
       <div className="my-16 bg-slate-300 p-8 rounded-xl ">
         <h2 className="text-2xl lg:text-4xl text-center mb-9  border-transparent border-4 border-b-amber-500 mx-auto w-1/5 font-sans">
           Service Form

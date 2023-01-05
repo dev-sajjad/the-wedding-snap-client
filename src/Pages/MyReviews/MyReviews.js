@@ -3,18 +3,25 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import TopBanner from "../Services/TopBanner";
 import ReviewCard from "./ReviewCard";
 import ShortBannerImg from "../../../src/assets/ShortBanner/wedding.jpg";
+import Loading from "../Shared/Loading/Loading";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReview, setMyReview] = useState([]);
+  const [loading, setLoading] = useState(false)
+
 
   useEffect(() => {
+    setLoading(true)
     fetch(
       `https://the-wedding-snap-server.vercel.app/reviews?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
-        setMyReview(data.data);
+        if (data.success) {
+          setLoading(false)
+        }
+       return setMyReview(data.data);
       });
   }, [user?.email]);
 
@@ -35,11 +42,15 @@ const MyReviews = () => {
           <span className="text-rose-600 text-5xl">{myReview.length}</span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 my-14">
-        {myReview.map((review) => (
-          <ReviewCard key={review._id} review={review}></ReviewCard>
-        ))}
-      </div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 my-14">
+          {myReview.map((review) => (
+            <ReviewCard key={review._id} review={review}></ReviewCard>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
