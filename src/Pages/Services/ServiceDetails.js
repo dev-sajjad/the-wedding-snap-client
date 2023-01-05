@@ -126,12 +126,6 @@ const ServiceDetails = () => {
               <div className="flex flex-col justify-center items-center">
                 <h1 className="text-rose-500 font-mono text-xl text-center  italic lg:text-2xl font-semibold mb-4">
                   Opps! You are not logged In.
-                  <br />
-                  <Link to="/login">
-                    <span className="btn btn-warning text-center">
-                      Login Now
-                    </span>
-                  </Link>
                 </h1>
                 <h2 className="text-black text-2xl p-2 rounded-2xl lg:text-3xl font-thin bg-slate-200">
                   Please login to add a review.
