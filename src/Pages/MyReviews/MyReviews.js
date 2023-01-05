@@ -9,7 +9,9 @@ const MyReviews = () => {
   const [myReview, setMyReview] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(
+      `https://the-wedding-snap-server.vercel.app/reviews?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyReview(data.data);

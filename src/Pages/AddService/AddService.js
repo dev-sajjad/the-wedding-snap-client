@@ -4,47 +4,40 @@ import ShortBannerImg from "../../../src/assets/ShortBanner/wedding.jpg";
 import TopBanner from "../Services/TopBanner";
 
 const AddService = () => {
+  const handleAddService = (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-    const handleAddService = (e) => {
-        e.preventDefault()
-        const form = e.target;
+    const serviceData = {
+      service_id: "package" + form.id.value,
+      service_name: form.name.value,
+      price: form.price.value,
+      image: form.image.value,
+      duration: form.duration.value,
+      rating: form.rating.value,
+      description: form.description.value,
+    };
 
-        const serviceData = {
-             service_id : 'package' + form.id.value,
-            service_name: form.name.value,
-            price: form.price.value,
-            image: form.image.value,
-            duration: form.duration.value,
-            rating: form.rating.value,
-            description: form.description.value
+    fetch("https://the-wedding-snap-server.vercel.app/services", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(serviceData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success(data.message);
+          form.reset();
         }
-
-        fetch("http://localhost:5000/services", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(serviceData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    toast.success(data.message)
-                    form.reset()
-                }
-            })
-        .catch(error => toast.error(error.message))
-        
-
-
-    }
-
-
-
+      })
+      .catch((error) => toast.error(error.message));
+  };
 
   const bannerData = {
     name: "Add Service",
-      img: ShortBannerImg,
+    img: ShortBannerImg,
   };
 
   return (
@@ -53,8 +46,10 @@ const AddService = () => {
         BannerImg={bannerData.img}
         BannerName={bannerData.name}
       ></TopBanner>
-          <div className="my-16 bg-slate-300 p-8 rounded-xl ">
-              <h2 className="text-2xl lg:text-4xl text-center mb-9  border-transparent border-4 border-b-amber-500 mx-auto w-1/5 font-sans">Service Form</h2>
+      <div className="my-16 bg-slate-300 p-8 rounded-xl ">
+        <h2 className="text-2xl lg:text-4xl text-center mb-9  border-transparent border-4 border-b-amber-500 mx-auto w-1/5 font-sans">
+          Service Form
+        </h2>
         <form onSubmit={handleAddService}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="form-control w-full max-w-xs">
@@ -137,14 +132,17 @@ const AddService = () => {
                 Descriptions*
               </span>
             </label>
-            <input
+            <textarea
               type="text"
               name="description"
               className="textarea textarea-warning h-60 border-warning bg-yellow-50 w-full"
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary btn-md tracking-wide font-mono text-xl w-full mt-6">
+          <button
+            type="submit"
+            className="btn btn-primary btn-md tracking-wide font-mono text-xl w-full mt-6"
+          >
             Add Service
           </button>
         </form>

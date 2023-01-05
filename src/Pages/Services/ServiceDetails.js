@@ -31,7 +31,7 @@ const ServiceDetails = () => {
 
   // load specific service details data
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://the-wedding-snap-server.vercel.app/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
         return setServiceDetails(data.data);
@@ -40,7 +40,9 @@ const ServiceDetails = () => {
 
   // load specific service related data
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${serviceDetails?.service_id}`)
+    fetch(
+      `https://the-wedding-snap-server.vercel.app/reviews/${serviceDetails?.service_id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         return setReviews(data.data);
@@ -81,7 +83,7 @@ const ServiceDetails = () => {
           <h1 className="text-3xl mb-4 md:text-5xl">{service_name}</h1>
           <div className="flex items-center my-3">
             <div>
-              <h4 className="text-2xl mr-80 font-semibold bg-slate-200 rounded-3xl p-2">
+              <h4 className="text-2xl mr-40 md:mr-60 lg:mr-80 font-semibold bg-slate-200 rounded-3xl p-2">
                 ${price}
               </h4>
             </div>
@@ -111,7 +113,7 @@ const ServiceDetails = () => {
           Total reviews: {reviews.length}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {reviews.map((review) => (
               <Reviews key={review._id} review={review}></Reviews>
             ))}

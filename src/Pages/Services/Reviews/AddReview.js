@@ -19,7 +19,7 @@ const AddReview = ({ service_id, service_name }) => {
       rating: e.target.rating.value ? e.target.rating.value : 5,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://the-wedding-snap-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
