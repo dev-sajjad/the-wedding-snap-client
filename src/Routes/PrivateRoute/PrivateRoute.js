@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Circles } from "react-loader-spinner";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import Loading from "../../Pages/Shared/Loading/Loading";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -9,15 +9,7 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="flex h-screen justify-center items-center">
-        <Circles
-          height="100"
-          width="100"
-          color="#fcc603"
-          ariaLabel="circles-loading"
-          visible={true}
-        />
-      </div>
+      <Loading />
     );
   }
 
